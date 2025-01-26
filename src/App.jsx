@@ -60,7 +60,7 @@ const App = () => {
             Play Again
           </button>
         ) : (
-          <div className="grid grid-cols-6 gap-3">
+          <div className="grid grid-cols-6 sm:grid-cols-9 gap-3">
             {numbers.map((n, i) => (
               <div
                 key={i}
