@@ -49,7 +49,7 @@ const App = () => {
   }, []);
 
   return (
-    <div className="flex h-screen justify-center items-center">
+    <div className="flex min-h-screen justify-center items-center">
       <div>
         <p className="text-2xl text-center my-6">Memory Game</p>
         {hidden.length == 36 ? (
