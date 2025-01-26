@@ -50,52 +50,55 @@ const App = () => {
 
   return (
     <div className="flex h-screen justify-center items-center">
-      {hidden.length == 36 ? (
-        <button
-          className="bg-blue-400 px-4 py-2 text-2xl w-[10rem] h-[4rem]"
-          onClick={() => setHidden([])}
-        >
-          Play Again
-        </button>
-      ) : (
-        <div className="grid grid-cols-6 gap-3">
-          {numbers.map((n, i) => (
-            <div
-              key={i}
-              onClick={() => handleClick(i)}
-              style={
-                opened1 !== i && opened2 !== i
-                  ? hidden.length > 0 && hidden.includes(i)
-                    ? { border: "none", backgroundColor: "white" }
-                    : {
-                        backgroundImage: `url(${design})`,
-                        backgroundSize: "contain",
-                        backgroundRepeat: "no-repeat",
-                      }
-                  : { backgroundColor: "white", borderWidth: "2px" }
-              }
-              className={`w-[2.5rem] sm:w-[4rem] h-[3rem] sm:h-[6rem]  cursor-pointer  border-black flex justify-center items-center
-                ${
+      <div>
+        <p className="text-2xl text-center my-6">Memory Game</p>
+        {hidden.length == 36 ? (
+          <button
+            className="bg-blue-400 px-4 py-2 text-2xl w-[10rem] h-[4rem]"
+            onClick={() => setHidden([])}
+          >
+            Play Again
+          </button>
+        ) : (
+          <div className="grid grid-cols-6 gap-3">
+            {numbers.map((n, i) => (
+              <div
+                key={i}
+                onClick={() => handleClick(i)}
+                style={
                   opened1 !== i && opened2 !== i
                     ? hidden.length > 0 && hidden.includes(i)
-                      ? " border-0 bg-white"
-                      : " drop-shadow-xl"
-                    : " bg-white border-2"
-                }`}
-            >
-              <p
-                className={
-                  (opened1 == i || opened2 == i) && !hidden.includes(i)
-                    ? "text-2xl"
-                    : "hidden "
+                      ? { border: "none", backgroundColor: "white" }
+                      : {
+                          backgroundImage: `url(${design})`,
+                          backgroundSize: "contain",
+                          backgroundRepeat: "no-repeat",
+                        }
+                    : { backgroundColor: "white", borderWidth: "2px" }
                 }
+                className={`w-[2.5rem] sm:w-[4rem] h-[3rem] sm:h-[6rem]  cursor-pointer  border-black flex justify-center items-center
+                    ${
+                      opened1 !== i && opened2 !== i
+                        ? hidden.length > 0 && hidden.includes(i)
+                          ? " border-0 bg-white"
+                          : " drop-shadow-xl"
+                        : " bg-white border-2"
+                    }`}
               >
-                {n}
-              </p>
-            </div>
-          ))}
-        </div>
-      )}
+                <p
+                  className={
+                    (opened1 == i || opened2 == i) && !hidden.includes(i)
+                      ? "text-2xl"
+                      : "hidden "
+                  }
+                >
+                  {n}
+                </p>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 };
