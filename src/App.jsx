@@ -75,7 +75,7 @@ const App = () => {
                 style={
                   opened1 !== i && opened2 !== i
                     ? hidden.length > 0 && hidden.includes(i)
-                      ? { border: "none", backgroundColor: "white" }
+                      ? { border: "none", backgroundColor: "#fee685" }
                       : {
                           backgroundImage: `url(${design})`,
                           backgroundSize: "cover",
