@@ -7,7 +7,7 @@ const App = () => {
   const [opened1, setOpened1] = useState(-1);
   const [opened2, setOpened2] = useState(-1);
   const [hidden, setHidden] = useState([]);
-  const [reload, setReload] = useState(false);
+  const [reload, setReload] = useState(true);
 
   const getNumbers = () => {
     let indices = [];
