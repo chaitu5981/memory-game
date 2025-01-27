@@ -53,7 +53,7 @@ const App = () => {
   }, [reload]);
 
   return (
-    <div className="flex min-h-screen justify-center items-center">
+    <div className="flex min-h-screen justify-center items-center bg-amber-200">
       <div>
         <p className="text-2xl text-center my-6">Memory Game</p>
         {hidden.length == 36 ? (
