@@ -71,12 +71,13 @@ const App = () => {
                       ? { border: "none", backgroundColor: "white" }
                       : {
                           backgroundImage: `url(${design})`,
-                          backgroundSize: "contain",
+                          backgroundSize: "cover",
                           backgroundRepeat: "no-repeat",
+                          backgroundPosition: "center",
                         }
                     : { backgroundColor: "white", borderWidth: "2px" }
                 }
-                className={`w-[2.5rem] sm:w-[4rem] h-[3rem] sm:h-[6rem]  cursor-pointer  border-black flex justify-center items-center
+                className={`w-[3rem] sm:w-[4rem] h-[4.5rem] sm:h-[6rem]  cursor-pointer  border-black flex justify-center items-center
                     ${
                       opened1 !== i && opened2 !== i
                         ? hidden.length > 0 && hidden.includes(i)
