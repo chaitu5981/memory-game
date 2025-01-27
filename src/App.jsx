@@ -7,6 +7,7 @@ const App = () => {
   const [opened1, setOpened1] = useState(-1);
   const [opened2, setOpened2] = useState(-1);
   const [hidden, setHidden] = useState([]);
+  const [reload, setReload] = useState(false);
 
   const getNumbers = () => {
     let indices = [];
@@ -44,9 +45,12 @@ const App = () => {
     }
   };
   useEffect(() => {
-    let indices = getNumbers();
-    setNumbers(indices.map((i) => (i > 18 ? i - 18 : i)));
-  }, []);
+    if (reload) {
+      let indices = getNumbers();
+      setNumbers(indices.map((i) => (i > 18 ? i - 18 : i)));
+      setReload(false);
+    }
+  }, [reload]);
 
   return (
     <div className="flex min-h-screen justify-center items-center">
@@ -55,7 +59,10 @@ const App = () => {
         {hidden.length == 36 ? (
           <button
             className="bg-blue-400 px-4 py-2 text-2xl w-[10rem] h-[4rem]"
-            onClick={() => setHidden([])}
+            onClick={() => {
+              setHidden([]);
+              setReload(true);
+            }}
           >
             Play Again
           </button>
